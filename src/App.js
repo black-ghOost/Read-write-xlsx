@@ -1,8 +1,8 @@
-import { useState } from "react";
-import "./App.css";
-import * as XLSX from "xlsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Table, Container } from 'react-bootstrap';
+import { useState } from "react";
+import { Container, Table } from 'react-bootstrap';
+import * as XLSX from "xlsx";
+import "./App.css";
 
 function App() {
   const [items, setItems] = useState([]);
