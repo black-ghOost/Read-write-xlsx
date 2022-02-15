@@ -1,15 +1,13 @@
 import { useState } from "react";
 import "./App.css";
-// import 'antd/dist/antd.css';
 import * as XLSX from "xlsx";
-import { Button, Upload, message } from "antd";
-import { UploadOutlined } from '@ant-design/icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table, Container } from 'react-bootstrap';
 
 function App() {
   const [items, setItems] = useState([]);
 
+  // convert excel or csv file
   const readExcel = (file) => {
     const promise = new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -39,35 +37,10 @@ function App() {
     });
   };
 
-  console.log('tttttttttttttt', items)
-
-  // const props = {
-  //   name: 'file',
-  //   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-  //   headers: {
-  //     authorization: 'authorization-text',
-  //   },
-  //   onChange(info) {
-  //     if (info.file.status !== 'uploading') {
-  //       console.log(info.file, info.fileList);
-  //     }
-  //     if (info.file.status === 'done') {
-  //       message.success(`${info.file.name} file uploaded successfully`);
-  //       console.log('iiiiiiiiii', info)
-  //     } else if (info.file.status === 'error') {
-  //       message.error(`${info.file.name} file upload failed.`);
-  //     }
-  //   },
-  // };
+  // console.log('items', items)
 
   return (
     <div style={{textAlign: 'center', marginTop: '30px'}}>
-      {/* <Upload onChange={(e) => {
-          const file = e.target.files[0];
-          readExcel(file);
-        }}>
-    <Button icon={<UploadOutlined />}>Click to Upload</Button>
-  </Upload> */}
   <h1 style={{fontSize: '30px', fontWeight: '700', marginBottom: '10px'}}>Upload Excel or CSV File</h1>
       <input
         type="file"
